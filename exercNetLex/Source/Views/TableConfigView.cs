@@ -14,7 +14,6 @@ namespace exercNetLex
 {
 	public partial class TableConfigView : MvpForm, ITableConfigView
 	{
-		//RibbonPresenter Rp;
 
 		public TableConfigView()
 		{
@@ -22,27 +21,45 @@ namespace exercNetLex
 		}
 
 		public event EventHandler CreateTable;
+		public event EventHandler CloseForm;
+
+		public int NumeroLinhas
+		{
+			get
+			{
+				return (int)NudNumLinhas.Value;
+			}
+
+			set { }
+
+		}
+		public int NumeroColunas
+		{
+			get
+			{
+				return (int)NudNumColunas.Value;
+			}
+			
+			set { }
+		}
 
 		private void BntAddTableOK_Click(object sender, EventArgs e)
 		{
-			/*Rp = new RibbonPresenter();
-
-			//Seta as variáveis INT com os valores inseridos na tela de configuração da tabela
-			int numLinhas = (int)NudNumLinhas.Value;
-			int numColunas = (int)NudNumColunas.Value;
-
-			//Fecha a tela de configuração após extrair os valores digitados
-			ActiveForm.Close();
-
-			//Chama a função de criar tabela passando os valores extraidos
-			Rp.CriarTabela(numLinhas, numColunas);*/
-
 			CreateTable(sender, e);
-
-
+			CloseForm(sender, e);
 		}
 
 		private void BntAddTableCancel_Click(object sender, EventArgs e)
+		{
+			CloseForm(sender, e);
+		}
+
+		private void TableConfigView_Load(object sender, EventArgs e)
+		{
+
+		}
+
+		public void FecharTela()
 		{
 			ActiveForm.Close();
 		}
