@@ -12,7 +12,7 @@ namespace exercNetLex
 {
 	public partial class FrmAddSpan : Form
 	{
-		RibbonPresenter RibbonPresenter;
+		//RibbonPresenter RibbonPresenter;
 
 		public FrmAddSpan()
 		{
@@ -26,7 +26,7 @@ namespace exercNetLex
 
 		private void BntAddSpanOk_Click(object sender, EventArgs e)
 		{
-			RibbonPresenter = new RibbonPresenter();
+			/*RibbonPresenter = new RibbonPresenter();
 			// Testa se o campo foi preenchido
 			if (TxtAddSpan.Text != null && TxtAddSpan.Text != "")
 			{
@@ -36,7 +36,7 @@ namespace exercNetLex
 			else
 			{
 				MessageBox.Show("Campo vazio! Você deve inserir uma expressão!");
-			}
+			}*/
 		}
 	}
 }

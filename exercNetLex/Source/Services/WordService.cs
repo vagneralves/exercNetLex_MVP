@@ -1,10 +1,17 @@
 ﻿using Word = Microsoft.Office.Interop.Word;
 using System;
+using System.IO;
+using System.Windows.Forms;
 
 namespace exercNetLex.Source.Services
 {
 	class WordService : IWordService
 	{
+		Word.Selection selecao = Globals.ThisAddIn.Application.Selection;
+		Word.Document doc = Globals.ThisAddIn.Application.ActiveDocument;
+		Word.Selection selection = Globals.ThisAddIn.Application.ActiveDocument.Application.Selection;
+		Word.Find findObject = Globals.ThisAddIn.Application.Selection.Find;
+
 
 		private static readonly Lazy<IWordService> instance =
 			new Lazy<IWordService>(() => new WordService());
@@ -22,10 +29,6 @@ namespace exercNetLex.Source.Services
 		}
 		public bool FindNext(string text)
 		{
-			Word.Selection selecao = Globals.ThisAddIn.Application.Selection;
-			Word.Document doc = Globals.ThisAddIn.Application.ActiveDocument;
-			Word.Selection selection = Globals.ThisAddIn.Application.ActiveDocument.Application.Selection;
-			Word.Find findObject = Globals.ThisAddIn.Application.Selection.Find;
 
 			object findText = text;
 			selection.Find.ClearFormatting();
@@ -47,12 +50,48 @@ namespace exercNetLex.Source.Services
 
 		public void CriarTabela(int numLinhas, int numColunas)
 		{
-			Word.Selection selection = Globals.ThisAddIn.Application.ActiveDocument.Application.Selection;
-			
+
 			selection.Collapse();
 
 			// Add a tabela, formata e coloca bordas na tabela
 			selection.Tables.Add(selection.Range, numLinhas, numColunas, Word.WdLineStyle.wdLineStyleSingle);
+		}
+
+		public void AddImage(string nomeImg)
+		{
+
+			selection.Collapse();
+			//Add a imagem no documento
+			selection.InlineShapes.AddPicture(nomeImg);
+			//Globals.ThisAddIn.Application.Selection.InlineShapes.AddPicture(nomeImg);
+		}
+
+		public void SavePDF()
+		{
+			try
+			{
+				object name = Path.GetTempPath() + @"\\" + doc.Name + ".pdf";
+				doc.ExportAsFixedFormat((string)name, Word.WdExportFormat.wdExportFormatPDF, OpenAfterExport: true);
+			}
+			catch (Exception exception)
+			{
+				MessageBox.Show(exception.Message);
+			}
+		}
+
+		public void InvertCase()
+		{
+			for(int i = 1; i <= selecao.Characters.Count; i++)
+			{
+				if(selecao.Characters[i].Case == Word.WdCharacterCase.wdLowerCase)
+				{
+					selecao.Characters[i].Case = Word.WdCharacterCase.wdUpperCase;
+				}
+				else
+				{
+					selecao.Characters[i].Case = Word.WdCharacterCase.wdLowerCase;
+				}
+			}
 		}
 	}
 }

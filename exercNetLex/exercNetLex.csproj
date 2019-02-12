@@ -220,8 +220,8 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Ribbon1.resx">
-      <DependentUpon>Ribbon1.cs</DependentUpon>
+    <EmbeddedResource Include="Source\Ribbon\Ribbon.resx">
+      <DependentUpon>Ribbon.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Source\Views\TableConfigView.resx">
       <DependentUpon>TableConfigView.cs</DependentUpon>
@@ -239,17 +239,21 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
-    <Compile Include="Ribbon1.cs">
+    <Compile Include="Source\Ribbon\Ribbon.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Ribbon1.Designer.cs">
-      <DependentUpon>Ribbon1.cs</DependentUpon>
+    <Compile Include="Source\Ribbon\Ribbon.Designer.cs">
+      <DependentUpon>Ribbon.cs</DependentUpon>
     </Compile>
-    <Compile Include="RibbonPresenter.cs" />
+    <Compile Include="Source\Presenters\RibbonPresenter.cs" />
     <Compile Include="Source\Presenters\TableConfigPresenter.cs" />
     <Compile Include="Source\Services\IWordService.cs" />
     <Compile Include="Source\Services\WordService.cs" />
     <Compile Include="Source\Views\ITableConfigView.cs" />
+    <Compile Include="Source\Views\IRibbonView.cs" />
+    <Compile Include="Source\Views\RibbonView.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Source\Views\TableConfigView.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -270,7 +274,6 @@
   <ItemGroup>
     <Folder Include="Resources\" />
     <Folder Include="Source\Models\" />
-    <Folder Include="Source\Ribbon\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
@@ -284,7 +287,7 @@
     </ManifestKeyFile>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>1986AC4A146C61B04BCA5B33166D54415191A123</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>16A7386DC10F524FE24B117F438A01C76E61C9C6</ManifestCertificateThumbprint>
   </PropertyGroup>
   <!-- Include the build rules for a C# project. -->
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

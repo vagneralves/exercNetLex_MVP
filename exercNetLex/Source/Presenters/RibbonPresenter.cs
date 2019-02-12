@@ -1,84 +1,52 @@
 ﻿using System;
+using System.Windows.Forms;
 using Word = Microsoft.Office.Interop.Word;
 
-namespace exercNetLex
-{
-	public class RibbonPresenter
+using WinFormsMvp;
+using exercNetLex.Views;
+using exercNetLex.Source.Services;
+using exercNetLex.Source.Views;
+
+
+namespace exercNetLex.Presenters
+{ 
+	public class RibbonPresenter : Presenter<IRibbonView>
 	{
 		public Word.Document Documento = Globals.ThisAddIn.Application.ActiveDocument;
 		public Word.Selection Selecao = Globals.ThisAddIn.Application.Selection;
+		Word.Selection selection = Globals.ThisAddIn.Application.ActiveDocument.Application.Selection;
 		public Word.Range Range = Globals.ThisAddIn.Application.Selection.Range;
 
-		public void SavePDF()
-		{
-			//Extrai as informções do documento ativo
-			string nomeDocument = Documento.Name;
-			string enderecoDoc = Documento.Path;
+		private IWordService wordService;
 
-			//Cria uma string para armazenar o endereço onde o arquivo PDF será salvo e chama a função para converter
-			string enderecoPDF = enderecoDoc + "\\" + nomeDocument + ".pdf";
-			/*if (!Documento.Saved)
-			{
-				Documento.Save();
-			}*/
-			Documento.ExportAsFixedFormat(enderecoPDF, Word.WdExportFormat.wdExportFormatPDF, OpenAfterExport: true);
+		public RibbonPresenter(IRibbonView View) : base(View)
+		{
+			wordService = WordService.Instance;
+			View.AddImage += View_AddImage;
+			View.SavePDF += View_SavePDF;
+			View.InvertCase += View_InvertCase;
 		}
 
-		public void AddImage(string nomeImg)
+		private void View_InvertCase(object sender, EventArgs e)
 		{
-			//Add a imagem no documento
-			Globals.ThisAddIn.Application.Selection.InlineShapes.AddPicture(nomeImg);
+			wordService.InvertCase();
 		}
 
-		public void CriarTabela(int numLinhas, int numColunas)
+		private void View_AddImage(object sender, EventArgs e)
 		{
-			object start = 0, end = 0;
+			View.MostrarOpenFileDialog();
+			string nomeImg = View.RetornaNomeArquivo();
+			wordService.AddImage(nomeImg);
+		}
 
-			//Word.Range rng = Documento.Range(ref start, ref end);
-			Word.Range rng = Documento.Application.Selection.Range;
-
-			// Configura o local onde será inserido a tabela
-			rng.Font.Name = "Calibri";
-			rng.Font.Size = 11;
-			rng.InsertParagraphAfter();
-			rng.SetRange(rng.End, rng.End);
-
-			// Add a tabela, formata e coloca bordas na tabela
-			rng.Tables.Add(Documento.Paragraphs[rng.Start].Range, numLinhas, numColunas, Word.WdLineStyle.wdLineStyleSingle);
+		public void View_SavePDF(object sender, EventArgs e)
+		{
+			wordService.SavePDF();
 		}
 
 		public void InvertCase()
 		{
-			string result = "";
-			char inverso;
-
-			//Percorre cada caracte da string que recebeu a selecao
-			foreach (char caracter in Selecao.Text)
-			{
-				//testa se o caracter é letra. Se for testa e inverte, senao add ao resultado
-				if (Char.IsLetter(caracter))
-				{
-					if (Char.IsLower(caracter))
-					{
-						inverso = Char.ToUpper(caracter);
-					}
-					else
-					{
-						inverso = Char.ToLower(caracter);
-					}
-					result += inverso;
-				}
-				else
-				{
-					if (caracter != Char.Parse("\r"))
-					{
-						result += caracter;
-					}
-				}
-			}
-
-			Selecao.Delete();
-			Selecao.InsertAfter(result);
+			
 		}
 
 		public void AddSpan(string condicao)

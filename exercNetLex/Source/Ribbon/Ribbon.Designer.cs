@@ -1,4 +1,5 @@
-﻿namespace exercNetLex
+﻿using System;
+namespace exercNetLex
 {
 	partial class Ribbon1 : Microsoft.Office.Tools.Ribbon.RibbonBase
 	{

@@ -1,15 +1,20 @@
 ﻿using Microsoft.Office.Tools.Ribbon;
 using Microsoft.Office.Tools.Word;
+using Word = Microsoft.Office.Interop.Word;
+using exercNetLex.Source.Views;
+using System;
 
 
 namespace exercNetLex
 {
 	public partial class Ribbon1
 	{
-		RibbonPresenter RibbonPresenter;
+		//RibbonPresenter RibbonPresenter;
 		FrmAddField FrmAddField;
 		FrmAddSpan FrmAddSpan;
 		FrmQualificacao FrmQualificacao;
+
+		RibbonView Rv;
 
 		private void Ribbon1_Load(object sender, RibbonUIEventArgs e)
 		{
@@ -27,10 +32,8 @@ namespace exercNetLex
 
 		private void VstoDoc_SelectionChange(object sender, SelectionEventArgs e)
 		{
-			RibbonPresenter = new RibbonPresenter();
-
-			RibbonPresenter.Selecao = Globals.ThisAddIn.Application.Selection;
-			if (RibbonPresenter.Selecao.Range.Text != null && RibbonPresenter.Selecao.Range.Text != "")
+			Word.Selection Selecao = Globals.ThisAddIn.Application.Selection;
+			if (Selecao.Range.Text != null && Selecao.Range.Text != "")
 			{
 				BntInvertCase.Enabled = true;
 				BntAddSpan.Enabled = true;
@@ -41,39 +44,29 @@ namespace exercNetLex
 				BntAddSpan.Enabled = false;
 			}
 		}
+				
+		private void BntAddImage_Click(object sender, RibbonControlEventArgs e)
+		{
+			Rv = new RibbonView();
+			Rv.ClickButton_AddImage(sender, (EventArgs)e);
+		}
 
 		private void BtnSavePDF_Click(object sender, RibbonControlEventArgs e)
 		{
-			RibbonPresenter = new RibbonPresenter();
-			RibbonPresenter.SavePDF();
-		}
-
-		private void BntAddImage_Click(object sender, RibbonControlEventArgs e)
-		{
-			//Configuração do openDialog
-			dlgImg.InitialDirectory = @"C:\Users\Netlex\Desktop\exercNetLex\";
-			dlgImg.Title = "Escolha a Imagem";
-			dlgImg.Filter = "Image Files (*.bmp;*.png;*.jpg)|*.bmp;*.png;*.jpg";
-
-			//Mostra o openDialog e seta a stringo com o nome da imagem
-			dlgImg.ShowDialog();
-			string nomeImg = dlgImg.FileName;
-
-			RibbonPresenter = new RibbonPresenter();
-			RibbonPresenter.AddImage(nomeImg);
+			Rv = new RibbonView();
+			Rv.ClickButton_SavePDF(sender, (EventArgs)e);
 		}
 
 		private void BntAddTabela_Click(object sender, RibbonControlEventArgs e)
 		{
-			//Mostra a tela de configuração da tabela
 			TableConfigView FormTable = new TableConfigView();
 			FormTable.Show();
 		}
 
 		private void BntInvertCase_Click(object sender, RibbonControlEventArgs e)
 		{
-			RibbonPresenter = new RibbonPresenter();
-			RibbonPresenter.InvertCase();
+			Rv = new RibbonView();
+			Rv.ClickButton_InvertCase(sender, (EventArgs)e);
 		}
 
 		private void BntFindAndReplace_Click(object sender, RibbonControlEventArgs e)

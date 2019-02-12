@@ -12,7 +12,7 @@ namespace exercNetLex
 {
 	public partial class FrmQualificacao : Form
 	{
-		RibbonPresenter RibbonPresenter;
+		//RibbonPresenter RibbonPresenter;
 
 		public FrmQualificacao()
 		{
@@ -26,7 +26,7 @@ namespace exercNetLex
 
 		private void BntQualificacaoOK_Click(object sender, EventArgs e)
 		{
-			RibbonPresenter = new RibbonPresenter();
+			/*RibbonPresenter = new RibbonPresenter();
 			if ((TxtContatoPJ.Text != null && TxtContatoPJ.Text != "") && (TxtContatoRep.Text != null && TxtContatoRep.Text != ""))
 			{
 				if (RibbonPresenter.Selecao.Text != null && RibbonPresenter.Selecao.Text != "")
@@ -53,7 +53,7 @@ namespace exercNetLex
 						MessageBox.Show("Campo vazio! Você deve inserir um nome para o Contato Rep!");
 					}
 				}
-			}
+			}*/
 		}
 	}
 }
