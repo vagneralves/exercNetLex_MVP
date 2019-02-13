@@ -128,7 +128,6 @@
 			this.Name = "TableConfigView";
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "Inserir Tabela";
-			this.Load += new System.EventHandler(this.TableConfigView_Load);
 			((System.ComponentModel.ISupportInitialize)(this.NudNumColunas)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.NudNumLinhas)).EndInit();
 			this.ResumeLayout(false);

@@ -64,14 +64,6 @@ namespace exercNetLex.Presenters
 			Range.Application.Selection.Font.Subscript = -1;
 		}
 
-		public void AddField(string fieldName)
-		{
-			//add o field entre "{}"
-			Range.Delete();
-			Range.InsertBefore("{" + fieldName + "}");
-			Range.Select();
-			Range.Application.Selection.Font.Color = Word.WdColor.wdColorRed;
-		}
 
 		public void AddQualificacao(string nomeContatoPJ, string nomeContatoRep)
 		{

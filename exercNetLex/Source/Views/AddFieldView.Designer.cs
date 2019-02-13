@@ -1,6 +1,6 @@
-﻿namespace exercNetLex
+﻿namespace exercNetLex.Views
 {
-	partial class FrmAddField
+	partial class AddFieldView
 	{
 		/// <summary>
 		/// Required designer variable.
@@ -28,7 +28,7 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
-			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmAddField));
+			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddFieldView));
 			this.TxtAddField = new System.Windows.Forms.TextBox();
 			this.LblAddField = new System.Windows.Forms.Label();
 			this.BntAddFieldCancel = new System.Windows.Forms.Button();

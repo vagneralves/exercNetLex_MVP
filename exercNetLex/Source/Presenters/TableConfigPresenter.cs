@@ -14,13 +14,13 @@ namespace exercNetLex.Presenters
 		public TableConfigPresenter(ITableConfigView View) : base(View)
 		{
 			View.CreateTable += View_CreateTable;
-			View.CloseForm += View_CloseForm;
+			View.CloseFormTableConfig += View_CloseFormTableConfig;
 			wordService = WordService.Instance;
 		}
 
-		private void View_CloseForm(object sender, EventArgs e)
+		private void View_CloseFormTableConfig(object sender, EventArgs e)
 		{
-			View.FecharTela();
+			View.FecharTelaTableConfig();
 		}
 
 		private void View_CreateTable(object sender, EventArgs e)

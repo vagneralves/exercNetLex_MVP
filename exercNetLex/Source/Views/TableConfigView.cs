@@ -21,7 +21,7 @@ namespace exercNetLex
 		}
 
 		public event EventHandler CreateTable;
-		public event EventHandler CloseForm;
+		public event EventHandler CloseFormTableConfig;
 
 		public int NumeroLinhas
 		{
@@ -46,22 +46,17 @@ namespace exercNetLex
 		private void BntAddTableOK_Click(object sender, EventArgs e)
 		{
 			CreateTable(sender, e);
-			CloseForm(sender, e);
+			CloseFormTableConfig(sender, e);
 		}
 
 		private void BntAddTableCancel_Click(object sender, EventArgs e)
 		{
-			CloseForm(sender, e);
+			CloseFormTableConfig(sender, e);
 		}
 
-		private void TableConfigView_Load(object sender, EventArgs e)
+		public void FecharTelaTableConfig()
 		{
-
-		}
-
-		public void FecharTela()
-		{
-			ActiveForm.Close();
+			this.Close();
 		}
 	}
 }

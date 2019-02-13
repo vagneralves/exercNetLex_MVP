@@ -175,11 +175,12 @@
   -->
   <ItemGroup>
     <Compile Include="FindPanelPresenter.cs" />
-    <Compile Include="FrmAddField.cs">
+    <Compile Include="Source\Presenters\AddFieldPresenter.cs" />
+    <Compile Include="Source\Views\AddFieldView.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmAddField.Designer.cs">
-      <DependentUpon>FrmAddField.cs</DependentUpon>
+    <Compile Include="Source\Views\AddFieldView.Designer.cs">
+      <DependentUpon>AddFieldView.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmAddSpan.cs">
       <SubType>Form</SubType>
@@ -202,8 +203,8 @@
     <Compile Include="FindPanel.Designer.cs">
       <DependentUpon>FindPanel.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="FrmAddField.resx">
-      <DependentUpon>FrmAddField.cs</DependentUpon>
+    <EmbeddedResource Include="Source\Views\AddFieldView.resx">
+      <DependentUpon>AddFieldView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmAddSpan.resx">
       <DependentUpon>FrmAddSpan.cs</DependentUpon>
@@ -249,6 +250,7 @@
     <Compile Include="Source\Presenters\TableConfigPresenter.cs" />
     <Compile Include="Source\Services\IWordService.cs" />
     <Compile Include="Source\Services\WordService.cs" />
+    <Compile Include="Source\Views\IAddFieldView.cs" />
     <Compile Include="Source\Views\ITableConfigView.cs" />
     <Compile Include="Source\Views\IRibbonView.cs" />
     <Compile Include="Source\Views\RibbonView.cs">

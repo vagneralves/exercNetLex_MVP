@@ -7,5 +7,6 @@
 		void AddImage(string nomeImg);
 		void SavePDF();
 		void InvertCase();
+		void AddField(string expression);
 	}
 }

@@ -11,6 +11,7 @@ namespace exercNetLex.Source.Services
 		Word.Document doc = Globals.ThisAddIn.Application.ActiveDocument;
 		Word.Selection selection = Globals.ThisAddIn.Application.ActiveDocument.Application.Selection;
 		Word.Find findObject = Globals.ThisAddIn.Application.Selection.Find;
+		public Word.Range Range = Globals.ThisAddIn.Application.Selection.Range;
 
 
 		private static readonly Lazy<IWordService> instance =
@@ -92,6 +93,15 @@ namespace exercNetLex.Source.Services
 					selecao.Characters[i].Case = Word.WdCharacterCase.wdLowerCase;
 				}
 			}
+		}
+
+		public void AddField(string expression)
+		{
+			//add o field entre "{}"
+			Range.Delete();
+			Range.InsertBefore(string.Format("{{{0}}}", expression));
+			Range.Select();
+			Range.Application.Selection.Font.Color = Word.WdColor.wdColorRed;
 		}
 	}
 }

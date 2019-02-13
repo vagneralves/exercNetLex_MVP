@@ -3,14 +3,14 @@ using Microsoft.Office.Tools.Word;
 using Word = Microsoft.Office.Interop.Word;
 using exercNetLex.Source.Views;
 using System;
-
+using exercNetLex.Views;
 
 namespace exercNetLex
 {
 	public partial class Ribbon1
 	{
 		//RibbonPresenter RibbonPresenter;
-		FrmAddField FrmAddField;
+		AddFieldView FrmAddField;
 		FrmAddSpan FrmAddSpan;
 		FrmQualificacao FrmQualificacao;
 
@@ -82,7 +82,7 @@ namespace exercNetLex
 
 		private void BntAddField_Click(object sender, RibbonControlEventArgs e)
 		{
-			FrmAddField = new FrmAddField();
+			FrmAddField = new AddFieldView();
 			FrmAddField.Show();
 			
 		}
