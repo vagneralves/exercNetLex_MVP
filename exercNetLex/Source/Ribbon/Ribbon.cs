@@ -10,8 +10,8 @@ namespace exercNetLex
 	public partial class Ribbon1
 	{
 		//RibbonPresenter RibbonPresenter;
-		AddFieldView FrmAddField;
-		FrmAddSpan FrmAddSpan;
+		AddFieldView AddFieldView;
+		AddSpanView AddSpanView;
 		FrmQualificacao FrmQualificacao;
 
 		RibbonView Rv;
@@ -76,14 +76,14 @@ namespace exercNetLex
 
 		private void BntAddSpan_Click(object sender, RibbonControlEventArgs e)
 		{
-			FrmAddSpan = new FrmAddSpan();
-			FrmAddSpan.Show();
+			AddSpanView = new AddSpanView();
+			AddSpanView.Show();
 		}
 
 		private void BntAddField_Click(object sender, RibbonControlEventArgs e)
 		{
-			FrmAddField = new AddFieldView();
-			FrmAddField.Show();
+			AddFieldView = new AddFieldView();
+			AddFieldView.Show();
 			
 		}
 

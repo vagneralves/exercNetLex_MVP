@@ -8,5 +8,6 @@
 		void SavePDF();
 		void InvertCase();
 		void AddField(string expression);
+		void AddSpan(string expression);
 	}
 }

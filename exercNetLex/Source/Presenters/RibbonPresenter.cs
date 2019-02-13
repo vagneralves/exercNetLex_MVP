@@ -49,20 +49,6 @@ namespace exercNetLex.Presenters
 			
 		}
 
-		public void AddSpan(string condicao)
-		{
-			//add o span na selecao
-			Range.InsertBefore("[");
-			Range.InsertAfter("]");
-			Range.Select();
-			Range.Application.Selection.Font.Color = Word.WdColor.wdColorRed;
-			Range.Start = Range.Start + 1;
-			Range.Select();
-			Range.InsertBefore(condicao);
-			Range.End = Range.Start + condicao.Length;
-			Range.Select();
-			Range.Application.Selection.Font.Subscript = -1;
-		}
 
 
 		public void AddQualificacao(string nomeContatoPJ, string nomeContatoRep)

@@ -1,6 +1,6 @@
 ﻿namespace exercNetLex
 {
-	partial class FrmAddSpan
+	partial class AddSpanView
 	{
 		/// <summary>
 		/// Required designer variable.
@@ -28,7 +28,7 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
-			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmAddSpan));
+			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddSpanView));
 			this.BntAddSpanOk = new System.Windows.Forms.Button();
 			this.BntAddSpanCancel = new System.Windows.Forms.Button();
 			this.LblAddSpan = new System.Windows.Forms.Label();

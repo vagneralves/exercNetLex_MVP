@@ -11,7 +11,8 @@ namespace exercNetLex.Source.Services
 		Word.Document doc = Globals.ThisAddIn.Application.ActiveDocument;
 		Word.Selection selection = Globals.ThisAddIn.Application.ActiveDocument.Application.Selection;
 		Word.Find findObject = Globals.ThisAddIn.Application.Selection.Find;
-		public Word.Range Range = Globals.ThisAddIn.Application.Selection.Range;
+		
+
 
 
 		private static readonly Lazy<IWordService> instance =
@@ -97,11 +98,29 @@ namespace exercNetLex.Source.Services
 
 		public void AddField(string expression)
 		{
+			Word.Range RangeField = Globals.ThisAddIn.Application.Selection.Range;
+			
 			//add o field entre "{}"
-			Range.Delete();
-			Range.InsertBefore(string.Format("{{{0}}}", expression));
-			Range.Select();
-			Range.Application.Selection.Font.Color = Word.WdColor.wdColorRed;
+			RangeField.Delete();
+			RangeField.InsertBefore(string.Format("{{{0}}}", expression));
+			RangeField.Select();
+			RangeField.Application.Selection.Font.Color = Word.WdColor.wdColorRed;
+		}
+
+		public void AddSpan(string expression)
+		{
+			Word.Range RangeSpan = Globals.ThisAddIn.Application.Selection.Range;
+			//add o span na selecao
+			RangeSpan.InsertBefore("[");
+			RangeSpan.InsertAfter("]");
+			RangeSpan.Select();
+			RangeSpan.Application.Selection.Font.Color = Word.WdColor.wdColorRed;
+			RangeSpan.Start = RangeSpan.Start + 1;
+			RangeSpan.Select();
+			RangeSpan.InsertBefore(expression);
+			RangeSpan.End = RangeSpan.Start + expression.Length;
+			RangeSpan.Select();
+			RangeSpan.Application.Selection.Font.Subscript = -1;
 		}
 	}
 }
