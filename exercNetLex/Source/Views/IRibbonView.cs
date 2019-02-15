@@ -9,7 +9,7 @@ namespace exercNetLex.Source.Views
 		event EventHandler AddImage;
 		event EventHandler SavePDF;
 		event EventHandler InvertCase;
-		
+
 		OpenFileDialog Open { get; set; }
 
 		void ClickButton_AddImage(object sender, EventArgs e);
@@ -18,5 +18,6 @@ namespace exercNetLex.Source.Views
 
 		void MostrarOpenFileDialog();
 		string RetornaNomeArquivo();
+
 	}
 }

@@ -8,8 +8,9 @@ namespace exercNetLex.Source.Views
 		event EventHandler AddField;
 		event EventHandler CloseFormAddField;
 
-		string expressionField { get; set; }
+		string ExpressionField { get; set; }
 
 		void FecharTelaAddField();
+		void MostrarMsgField(string msg);
 	}
 }

@@ -37,25 +37,28 @@
 			// 
 			// TxtAddField
 			// 
-			this.TxtAddField.Location = new System.Drawing.Point(35, 64);
+			this.TxtAddField.Location = new System.Drawing.Point(26, 52);
+			this.TxtAddField.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
 			this.TxtAddField.Name = "TxtAddField";
-			this.TxtAddField.Size = new System.Drawing.Size(262, 22);
+			this.TxtAddField.Size = new System.Drawing.Size(198, 20);
 			this.TxtAddField.TabIndex = 0;
 			// 
 			// LblAddField
 			// 
 			this.LblAddField.AutoSize = true;
-			this.LblAddField.Location = new System.Drawing.Point(32, 34);
+			this.LblAddField.Location = new System.Drawing.Point(24, 28);
+			this.LblAddField.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
 			this.LblAddField.Name = "LblAddField";
-			this.LblAddField.Size = new System.Drawing.Size(129, 17);
+			this.LblAddField.Size = new System.Drawing.Size(97, 13);
 			this.LblAddField.TabIndex = 1;
 			this.LblAddField.Text = "Digite a expressão:";
 			// 
 			// BntAddFieldCancel
 			// 
-			this.BntAddFieldCancel.Location = new System.Drawing.Point(35, 124);
+			this.BntAddFieldCancel.Location = new System.Drawing.Point(26, 101);
+			this.BntAddFieldCancel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
 			this.BntAddFieldCancel.Name = "BntAddFieldCancel";
-			this.BntAddFieldCancel.Size = new System.Drawing.Size(75, 23);
+			this.BntAddFieldCancel.Size = new System.Drawing.Size(56, 19);
 			this.BntAddFieldCancel.TabIndex = 2;
 			this.BntAddFieldCancel.Text = "Cancelar";
 			this.BntAddFieldCancel.UseVisualStyleBackColor = true;
@@ -63,25 +66,27 @@
 			// 
 			// BntAddFieldOk
 			// 
-			this.BntAddFieldOk.Location = new System.Drawing.Point(222, 124);
+			this.BntAddFieldOk.Location = new System.Drawing.Point(166, 101);
+			this.BntAddFieldOk.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
 			this.BntAddFieldOk.Name = "BntAddFieldOk";
-			this.BntAddFieldOk.Size = new System.Drawing.Size(75, 23);
+			this.BntAddFieldOk.Size = new System.Drawing.Size(56, 19);
 			this.BntAddFieldOk.TabIndex = 3;
 			this.BntAddFieldOk.Text = "OK";
 			this.BntAddFieldOk.UseVisualStyleBackColor = true;
 			this.BntAddFieldOk.Click += new System.EventHandler(this.BntAddFieldOk_Click);
 			// 
-			// FrmAddField
+			// AddFieldView
 			// 
-			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(343, 177);
+			this.ClientSize = new System.Drawing.Size(257, 144);
 			this.Controls.Add(this.BntAddFieldOk);
 			this.Controls.Add(this.BntAddFieldCancel);
 			this.Controls.Add(this.LblAddField);
 			this.Controls.Add(this.TxtAddField);
 			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-			this.Name = "FrmAddField";
+			this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+			this.Name = "AddFieldView";
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "Add Field";
 			this.ResumeLayout(false);

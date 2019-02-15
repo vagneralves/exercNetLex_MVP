@@ -20,13 +20,13 @@ namespace exercNetLex.Presenters
 		private void View_AddSpan(object sender, EventArgs e)
 		{
 			// Testa se o campo foi preenchido
-			if (View.expressionSpan != null && View.expressionSpan != "")
+			if (View.ExpressionSpan != null && View.ExpressionSpan != "")
 			{
-				wordService.AddSpan(View.expressionSpan);
+				wordService.AddSpan(View.ExpressionSpan);
 			}
 			else
 			{
-				MessageBox.Show("Campo vazio! Você deve inserir uma expressão!");
+				View.MostrarMsgSpan("Campo vazio! Você deve inserir uma expressão!");
 			}
 
 		}

@@ -174,9 +174,10 @@
     can be found.
   -->
   <ItemGroup>
-    <Compile Include="FindPanelPresenter.cs" />
+    <Compile Include="Source\Presenters\FindPanelPresenter.cs" />
     <Compile Include="Source\Presenters\AddFieldPresenter.cs" />
     <Compile Include="Source\Presenters\AddSpanPresenter.cs" />
+    <Compile Include="Source\Presenters\QualificationPresenter.cs" />
     <Compile Include="Source\Views\AddFieldView.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -189,20 +190,22 @@
     <Compile Include="Source\Views\AddSpanView.Designer.cs">
       <DependentUpon>AddSpanView.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmQualificacao.cs">
+    <Compile Include="Source\Views\IFindPanelView.cs" />
+    <Compile Include="Source\Views\IQualificationView.cs" />
+    <Compile Include="Source\Views\QualificationView.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmQualificacao.Designer.cs">
-      <DependentUpon>FrmQualificacao.cs</DependentUpon>
+    <Compile Include="Source\Views\QualificationView.Designer.cs">
+      <DependentUpon>QualificationView.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="FindPanel.cs">
+    <Compile Include="Source\Views\FindPanelView.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="FindPanel.Designer.cs">
-      <DependentUpon>FindPanel.cs</DependentUpon>
+    <Compile Include="Source\Views\FindPanelView.Designer.cs">
+      <DependentUpon>FindPanelView.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Source\Views\AddFieldView.resx">
       <DependentUpon>AddFieldView.cs</DependentUpon>
@@ -210,8 +213,8 @@
     <EmbeddedResource Include="Source\Views\AddSpanView.resx">
       <DependentUpon>AddSpanView.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmQualificacao.resx">
-      <DependentUpon>FrmQualificacao.cs</DependentUpon>
+    <EmbeddedResource Include="Source\Views\QualificationView.resx">
+      <DependentUpon>QualificationView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -221,6 +224,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="Source\Ribbon\Ribbon.resx">
       <DependentUpon>Ribbon.cs</DependentUpon>
@@ -228,8 +232,8 @@
     <EmbeddedResource Include="Source\Views\TableConfigView.resx">
       <DependentUpon>TableConfigView.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FindPanel.resx">
-      <DependentUpon>FindPanel.cs</DependentUpon>
+    <EmbeddedResource Include="Source\Views\FindPanelView.resx">
+      <DependentUpon>FindPanelView.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="exercNetLex_1_TemporaryKey.pfx" />
     <None Include="packages.config" />
@@ -276,8 +280,31 @@
     <AppDesigner Include="Properties\" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Resources\" />
     <Folder Include="Source\Models\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imgPDF.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\uploadImg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imgTable.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\caseImg.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\findAndReplace.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fieldImg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\spanImg1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\contatoPJImg.jpg" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

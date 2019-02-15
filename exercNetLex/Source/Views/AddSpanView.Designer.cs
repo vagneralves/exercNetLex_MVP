@@ -37,9 +37,10 @@
 			// 
 			// BntAddSpanOk
 			// 
-			this.BntAddSpanOk.Location = new System.Drawing.Point(229, 123);
+			this.BntAddSpanOk.Location = new System.Drawing.Point(172, 100);
+			this.BntAddSpanOk.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
 			this.BntAddSpanOk.Name = "BntAddSpanOk";
-			this.BntAddSpanOk.Size = new System.Drawing.Size(75, 23);
+			this.BntAddSpanOk.Size = new System.Drawing.Size(56, 19);
 			this.BntAddSpanOk.TabIndex = 7;
 			this.BntAddSpanOk.Text = "OK";
 			this.BntAddSpanOk.UseVisualStyleBackColor = true;
@@ -47,9 +48,10 @@
 			// 
 			// BntAddSpanCancel
 			// 
-			this.BntAddSpanCancel.Location = new System.Drawing.Point(42, 123);
+			this.BntAddSpanCancel.Location = new System.Drawing.Point(32, 100);
+			this.BntAddSpanCancel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
 			this.BntAddSpanCancel.Name = "BntAddSpanCancel";
-			this.BntAddSpanCancel.Size = new System.Drawing.Size(75, 23);
+			this.BntAddSpanCancel.Size = new System.Drawing.Size(56, 19);
 			this.BntAddSpanCancel.TabIndex = 6;
 			this.BntAddSpanCancel.Text = "Cancelar";
 			this.BntAddSpanCancel.UseVisualStyleBackColor = true;
@@ -58,30 +60,33 @@
 			// LblAddSpan
 			// 
 			this.LblAddSpan.AutoSize = true;
-			this.LblAddSpan.Location = new System.Drawing.Point(39, 33);
+			this.LblAddSpan.Location = new System.Drawing.Point(29, 27);
+			this.LblAddSpan.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
 			this.LblAddSpan.Name = "LblAddSpan";
-			this.LblAddSpan.Size = new System.Drawing.Size(129, 17);
+			this.LblAddSpan.Size = new System.Drawing.Size(97, 13);
 			this.LblAddSpan.TabIndex = 5;
 			this.LblAddSpan.Text = "Digite a expressão:";
 			// 
 			// TxtAddSpan
 			// 
-			this.TxtAddSpan.Location = new System.Drawing.Point(42, 63);
+			this.TxtAddSpan.Location = new System.Drawing.Point(32, 51);
+			this.TxtAddSpan.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
 			this.TxtAddSpan.Name = "TxtAddSpan";
-			this.TxtAddSpan.Size = new System.Drawing.Size(262, 22);
+			this.TxtAddSpan.Size = new System.Drawing.Size(198, 20);
 			this.TxtAddSpan.TabIndex = 4;
 			// 
-			// FrmAddSpan
+			// AddSpanView
 			// 
-			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(343, 178);
+			this.ClientSize = new System.Drawing.Size(257, 145);
 			this.Controls.Add(this.BntAddSpanOk);
 			this.Controls.Add(this.BntAddSpanCancel);
 			this.Controls.Add(this.LblAddSpan);
 			this.Controls.Add(this.TxtAddSpan);
 			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-			this.Name = "FrmAddSpan";
+			this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+			this.Name = "AddSpanView";
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "Add Span";
 			this.ResumeLayout(false);

@@ -51,5 +51,6 @@ namespace exercNetLex.Source.Views
 		{
 			return NomeArquivo;
 		}
+
 	}
 }

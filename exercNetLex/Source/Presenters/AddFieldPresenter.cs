@@ -20,13 +20,13 @@ namespace exercNetLex.Presenters
 		private void View_AddField(object sender, EventArgs e)
 		{
 			// Testa se o campo foi preenchido
-			if (View.expressionField != null && View.expressionField != "")
+			if (View.ExpressionField != null && View.ExpressionField != "")
 			{
-				wordService.AddField(View.expressionField);
+				wordService.AddField(View.ExpressionField);
 			}
 			else
 			{
-				MessageBox.Show("Campo vazio! Você deve inserir uma expressão!");
+				View.MostrarMsgField("Campo vazio! Você deve inserir uma expressão!");
 			}
 			
 		}

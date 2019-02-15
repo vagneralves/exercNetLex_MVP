@@ -17,14 +17,17 @@ namespace exercNetLex.Views
 		public event EventHandler CloseFormAddField;
 
 
-		public string expressionField
+		public string ExpressionField
 		{
 			get
 			{
 				return TxtAddField.Text;
 			}
 
-			set { }
+			set
+			{
+				TxtAddField.Text = value;
+			}
 		}
 
 		private void BntAddFieldCancel_Click(object sender, EventArgs e)
@@ -41,6 +44,11 @@ namespace exercNetLex.Views
 		public void FecharTelaAddField()
 		{
 			this.Close();
+		}
+
+		public void MostrarMsgField(string msg)
+		{
+			MessageBox.Show(msg);
 		}
 	}
 }

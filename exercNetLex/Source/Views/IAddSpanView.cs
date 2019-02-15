@@ -8,8 +8,9 @@ namespace exercNetLex.Source.Views
 		event EventHandler AddSpan;
 		event EventHandler CloseFormAddSpan;
 
-		string expressionSpan { get; set; }
+		string ExpressionSpan { get; set; }
 
 		void FecharTelaAddSpan();
+		void MostrarMsgSpan(string msg);
 	}
 }

@@ -9,15 +9,18 @@ namespace exercNetLex
 {
 	public partial class Ribbon1
 	{
-		//RibbonPresenter RibbonPresenter;
 		AddFieldView AddFieldView;
 		AddSpanView AddSpanView;
-		FrmQualificacao FrmQualificacao;
-
+		QualificationView QualificationView;
+		private FindPanelView FindPanel;
+		private static Microsoft.Office.Tools.CustomTaskPane CustomTaskPane;
 		RibbonView Rv;
 
 		private void Ribbon1_Load(object sender, RibbonUIEventArgs e)
 		{
+			FindPanel = new FindPanelView();
+			CustomTaskPane = Globals.ThisAddIn.CustomTaskPanes.Add(FindPanel, "Revisão");
+			CustomTaskPane.Width = 255;
 			Globals.ThisAddIn.Application.DocumentChange += Application_DocumentChange;
 		}
 
@@ -71,7 +74,7 @@ namespace exercNetLex
 
 		private void BntFindAndReplace_Click(object sender, RibbonControlEventArgs e)
 		{
-			ThisAddIn.IniciarFindAndReplace();
+			CustomTaskPane.Visible = !CustomTaskPane.Visible;
 		}
 
 		private void BntAddSpan_Click(object sender, RibbonControlEventArgs e)
@@ -84,13 +87,12 @@ namespace exercNetLex
 		{
 			AddFieldView = new AddFieldView();
 			AddFieldView.Show();
-			
 		}
 
 		private void BntQualificacao_Click(object sender, RibbonControlEventArgs e)
 		{
-			FrmQualificacao = new FrmQualificacao();
-			FrmQualificacao.Show();
+			QualificationView = new QualificationView();
+			QualificationView.Show();
 		}
 	}
 }

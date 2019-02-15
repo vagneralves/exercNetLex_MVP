@@ -30,7 +30,9 @@ namespace exercNetLex
 				return (int)NudNumLinhas.Value;
 			}
 
-			set { }
+			set {
+				NudNumLinhas.Value = value;
+			}
 
 		}
 		public int NumeroColunas
@@ -40,7 +42,9 @@ namespace exercNetLex
 				return (int)NudNumColunas.Value;
 			}
 			
-			set { }
+			set {
+				NudNumColunas.Value = value;
+			}
 		}
 
 		private void BntAddTableOK_Click(object sender, EventArgs e)

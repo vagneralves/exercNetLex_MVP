@@ -17,14 +17,17 @@ namespace exercNetLex
 		public event EventHandler CloseFormAddSpan;
 
 
-		public string expressionSpan
+		public string ExpressionSpan
 		{
 			get
 			{
 				return TxtAddSpan.Text;
 			}
 
-			set { }
+			set
+			{
+				TxtAddSpan.Text = value;
+			}
 		}
 
 		private void BntAddSpanCancel_Click(object sender, EventArgs e)
@@ -41,6 +44,11 @@ namespace exercNetLex
 		public void FecharTelaAddSpan()
 		{
 			this.Close();
+		}
+
+		public void MostrarMsgSpan(string msg)
+		{
+			MessageBox.Show(msg);
 		}
 	}
 }

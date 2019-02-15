@@ -35,24 +35,23 @@ namespace exercNetLex
 		/// </summary>
 		private void InitializeComponent()
 		{
-			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Ribbon1));
 			this.tab1 = this.Factory.CreateRibbonTab();
 			this.grpPDF = this.Factory.CreateRibbonGroup();
-			this.BtnSavePDF = this.Factory.CreateRibbonButton();
 			this.grpImg = this.Factory.CreateRibbonGroup();
-			this.BntAddImage = this.Factory.CreateRibbonButton();
 			this.grpTabela = this.Factory.CreateRibbonGroup();
-			this.BntAddTabela = this.Factory.CreateRibbonButton();
 			this.grpLetras = this.Factory.CreateRibbonGroup();
-			this.BntInvertCase = this.Factory.CreateRibbonButton();
 			this.grpRevisao = this.Factory.CreateRibbonGroup();
-			this.BntFindAndReplace = this.Factory.CreateRibbonButton();
 			this.grpFieldSpan = this.Factory.CreateRibbonGroup();
+			this.grpQualificacao = this.Factory.CreateRibbonGroup();
+			this.dlgImg = new System.Windows.Forms.OpenFileDialog();
+			this.BtnSavePDF = this.Factory.CreateRibbonButton();
+			this.BntAddImage = this.Factory.CreateRibbonButton();
+			this.BntAddTabela = this.Factory.CreateRibbonButton();
+			this.BntInvertCase = this.Factory.CreateRibbonButton();
+			this.BntFindAndReplace = this.Factory.CreateRibbonButton();
 			this.BntAddField = this.Factory.CreateRibbonButton();
 			this.BntAddSpan = this.Factory.CreateRibbonButton();
-			this.grpQualificacao = this.Factory.CreateRibbonGroup();
 			this.BntQualificacao = this.Factory.CreateRibbonButton();
-			this.dlgImg = new System.Windows.Forms.OpenFileDialog();
 			this.tab1.SuspendLayout();
 			this.grpPDF.SuspendLayout();
 			this.grpImg.SuspendLayout();
@@ -82,29 +81,11 @@ namespace exercNetLex
 			this.grpPDF.Label = "PDF";
 			this.grpPDF.Name = "grpPDF";
 			// 
-			// BtnSavePDF
-			// 
-			this.BtnSavePDF.ControlSize = Microsoft.Office.Core.RibbonControlSize.RibbonControlSizeLarge;
-			this.BtnSavePDF.Image = ((System.Drawing.Image)(resources.GetObject("BtnSavePDF.Image")));
-			this.BtnSavePDF.Label = "Save As PDF";
-			this.BtnSavePDF.Name = "BtnSavePDF";
-			this.BtnSavePDF.ShowImage = true;
-			this.BtnSavePDF.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.BtnSavePDF_Click);
-			// 
 			// grpImg
 			// 
 			this.grpImg.Items.Add(this.BntAddImage);
 			this.grpImg.Label = "Imagens";
 			this.grpImg.Name = "grpImg";
-			// 
-			// BntAddImage
-			// 
-			this.BntAddImage.ControlSize = Microsoft.Office.Core.RibbonControlSize.RibbonControlSizeLarge;
-			this.BntAddImage.Image = ((System.Drawing.Image)(resources.GetObject("BntAddImage.Image")));
-			this.BntAddImage.Label = "Add Image";
-			this.BntAddImage.Name = "BntAddImage";
-			this.BntAddImage.ShowImage = true;
-			this.BntAddImage.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.BntAddImage_Click);
 			// 
 			// grpTabela
 			// 
@@ -112,45 +93,17 @@ namespace exercNetLex
 			this.grpTabela.Label = "Tabelas";
 			this.grpTabela.Name = "grpTabela";
 			// 
-			// BntAddTabela
-			// 
-			this.BntAddTabela.ControlSize = Microsoft.Office.Core.RibbonControlSize.RibbonControlSizeLarge;
-			this.BntAddTabela.Image = ((System.Drawing.Image)(resources.GetObject("BntAddTabela.Image")));
-			this.BntAddTabela.Label = "Add Table";
-			this.BntAddTabela.Name = "BntAddTabela";
-			this.BntAddTabela.ShowImage = true;
-			this.BntAddTabela.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.BntAddTabela_Click);
-			// 
 			// grpLetras
 			// 
 			this.grpLetras.Items.Add(this.BntInvertCase);
 			this.grpLetras.Label = "Letras";
 			this.grpLetras.Name = "grpLetras";
 			// 
-			// BntInvertCase
-			// 
-			this.BntInvertCase.ControlSize = Microsoft.Office.Core.RibbonControlSize.RibbonControlSizeLarge;
-			this.BntInvertCase.Enabled = false;
-			this.BntInvertCase.Image = ((System.Drawing.Image)(resources.GetObject("BntInvertCase.Image")));
-			this.BntInvertCase.Label = "Invert Case";
-			this.BntInvertCase.Name = "BntInvertCase";
-			this.BntInvertCase.ShowImage = true;
-			this.BntInvertCase.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.BntInvertCase_Click);
-			// 
 			// grpRevisao
 			// 
 			this.grpRevisao.Items.Add(this.BntFindAndReplace);
 			this.grpRevisao.Label = "Revisão";
 			this.grpRevisao.Name = "grpRevisao";
-			// 
-			// BntFindAndReplace
-			// 
-			this.BntFindAndReplace.ControlSize = Microsoft.Office.Core.RibbonControlSize.RibbonControlSizeLarge;
-			this.BntFindAndReplace.Image = ((System.Drawing.Image)(resources.GetObject("BntFindAndReplace.Image")));
-			this.BntFindAndReplace.Label = "Find and Replace";
-			this.BntFindAndReplace.Name = "BntFindAndReplace";
-			this.BntFindAndReplace.ShowImage = true;
-			this.BntFindAndReplace.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.BntFindAndReplace_Click);
 			// 
 			// grpFieldSpan
 			// 
@@ -159,10 +112,66 @@ namespace exercNetLex
 			this.grpFieldSpan.Label = "Condição";
 			this.grpFieldSpan.Name = "grpFieldSpan";
 			// 
+			// grpQualificacao
+			// 
+			this.grpQualificacao.Items.Add(this.BntQualificacao);
+			this.grpQualificacao.Label = "Qualificação";
+			this.grpQualificacao.Name = "grpQualificacao";
+			// 
+			// dlgImg
+			// 
+			this.dlgImg.FileName = "dlgImg";
+			// 
+			// BtnSavePDF
+			// 
+			this.BtnSavePDF.ControlSize = Microsoft.Office.Core.RibbonControlSize.RibbonControlSizeLarge;
+			this.BtnSavePDF.Image = global::exercNetLex.Properties.Resources.imgPDF;
+			this.BtnSavePDF.Label = "Save As PDF";
+			this.BtnSavePDF.Name = "BtnSavePDF";
+			this.BtnSavePDF.ShowImage = true;
+			this.BtnSavePDF.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.BtnSavePDF_Click);
+			// 
+			// BntAddImage
+			// 
+			this.BntAddImage.ControlSize = Microsoft.Office.Core.RibbonControlSize.RibbonControlSizeLarge;
+			this.BntAddImage.Image = global::exercNetLex.Properties.Resources.uploadImg;
+			this.BntAddImage.Label = "Add Image";
+			this.BntAddImage.Name = "BntAddImage";
+			this.BntAddImage.ShowImage = true;
+			this.BntAddImage.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.BntAddImage_Click);
+			// 
+			// BntAddTabela
+			// 
+			this.BntAddTabela.ControlSize = Microsoft.Office.Core.RibbonControlSize.RibbonControlSizeLarge;
+			this.BntAddTabela.Image = global::exercNetLex.Properties.Resources.imgTable;
+			this.BntAddTabela.Label = "Add Table";
+			this.BntAddTabela.Name = "BntAddTabela";
+			this.BntAddTabela.ShowImage = true;
+			this.BntAddTabela.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.BntAddTabela_Click);
+			// 
+			// BntInvertCase
+			// 
+			this.BntInvertCase.ControlSize = Microsoft.Office.Core.RibbonControlSize.RibbonControlSizeLarge;
+			this.BntInvertCase.Enabled = false;
+			this.BntInvertCase.Image = global::exercNetLex.Properties.Resources.caseImg;
+			this.BntInvertCase.Label = "Invert Case";
+			this.BntInvertCase.Name = "BntInvertCase";
+			this.BntInvertCase.ShowImage = true;
+			this.BntInvertCase.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.BntInvertCase_Click);
+			// 
+			// BntFindAndReplace
+			// 
+			this.BntFindAndReplace.ControlSize = Microsoft.Office.Core.RibbonControlSize.RibbonControlSizeLarge;
+			this.BntFindAndReplace.Image = global::exercNetLex.Properties.Resources.findAndReplace;
+			this.BntFindAndReplace.Label = "Find and Replace";
+			this.BntFindAndReplace.Name = "BntFindAndReplace";
+			this.BntFindAndReplace.ShowImage = true;
+			this.BntFindAndReplace.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.BntFindAndReplace_Click);
+			// 
 			// BntAddField
 			// 
 			this.BntAddField.ControlSize = Microsoft.Office.Core.RibbonControlSize.RibbonControlSizeLarge;
-			this.BntAddField.Image = ((System.Drawing.Image)(resources.GetObject("BntAddField.Image")));
+			this.BntAddField.Image = global::exercNetLex.Properties.Resources.fieldImg;
 			this.BntAddField.Label = "Add Field";
 			this.BntAddField.Name = "BntAddField";
 			this.BntAddField.ShowImage = true;
@@ -172,30 +181,20 @@ namespace exercNetLex
 			// 
 			this.BntAddSpan.ControlSize = Microsoft.Office.Core.RibbonControlSize.RibbonControlSizeLarge;
 			this.BntAddSpan.Enabled = false;
-			this.BntAddSpan.Image = ((System.Drawing.Image)(resources.GetObject("BntAddSpan.Image")));
+			this.BntAddSpan.Image = global::exercNetLex.Properties.Resources.spanImg1;
 			this.BntAddSpan.Label = "Add Span";
 			this.BntAddSpan.Name = "BntAddSpan";
 			this.BntAddSpan.ShowImage = true;
 			this.BntAddSpan.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.BntAddSpan_Click);
 			// 
-			// grpQualificacao
-			// 
-			this.grpQualificacao.Items.Add(this.BntQualificacao);
-			this.grpQualificacao.Label = "Qualificação";
-			this.grpQualificacao.Name = "grpQualificacao";
-			// 
 			// BntQualificacao
 			// 
 			this.BntQualificacao.ControlSize = Microsoft.Office.Core.RibbonControlSize.RibbonControlSizeLarge;
-			this.BntQualificacao.Image = ((System.Drawing.Image)(resources.GetObject("BntQualificacao.Image")));
+			this.BntQualificacao.Image = global::exercNetLex.Properties.Resources.contatoPJImg;
 			this.BntQualificacao.Label = "Qualificação PJ";
 			this.BntQualificacao.Name = "BntQualificacao";
 			this.BntQualificacao.ShowImage = true;
 			this.BntQualificacao.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.BntQualificacao_Click);
-			// 
-			// dlgImg
-			// 
-			this.dlgImg.FileName = "dlgImg";
 			// 
 			// Ribbon1
 			// 

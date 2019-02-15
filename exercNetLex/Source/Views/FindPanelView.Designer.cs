@@ -1,6 +1,6 @@
 ﻿namespace exercNetLex
 {
-	partial class FindPanel
+	partial class FindPanelView
 	{
 		/// <summary> 
 		/// Variável de designer necessária.
