@@ -121,11 +121,17 @@
   <data name="findAndReplace" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\findAndReplace.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="contatoPJImg" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\contatoPJImg.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="imgPDF" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\imgPDF.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="spanImg1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\spanImg1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="uploadImg" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\uploadImg.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="caseImg" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\caseImg.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -136,10 +142,7 @@
   <data name="fieldImg" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\fieldImg.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="uploadImg" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\uploadImg.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="contatoPJImg" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\contatoPJImg.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="checkImg" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\checkImg.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

@@ -48,11 +48,11 @@ namespace exercNetLex
 			this.BntFindAndReplace = this.Factory.CreateRibbonButton();
 			this.grpFieldSpan = this.Factory.CreateRibbonGroup();
 			this.BntAddField = this.Factory.CreateRibbonButton();
+			this.BtnFindSpan = this.Factory.CreateRibbonButton();
 			this.BntAddSpan = this.Factory.CreateRibbonButton();
 			this.grpQualificacao = this.Factory.CreateRibbonGroup();
 			this.BntQualificacao = this.Factory.CreateRibbonButton();
 			this.dlgImg = new System.Windows.Forms.OpenFileDialog();
-			this.BtnFindSpan = this.Factory.CreateRibbonButton();
 			this.tab1.SuspendLayout();
 			this.grpPDF.SuspendLayout();
 			this.grpImg.SuspendLayout();
@@ -169,6 +169,15 @@ namespace exercNetLex
 			this.BntAddField.ShowImage = true;
 			this.BntAddField.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.BntAddField_Click);
 			// 
+			// BtnFindSpan
+			// 
+			this.BtnFindSpan.ControlSize = Microsoft.Office.Core.RibbonControlSize.RibbonControlSizeLarge;
+			this.BtnFindSpan.Image = global::exercNetLex.Properties.Resources.checkImg;
+			this.BtnFindSpan.Label = "Check Span";
+			this.BtnFindSpan.Name = "BtnFindSpan";
+			this.BtnFindSpan.ShowImage = true;
+			this.BtnFindSpan.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.BtnFindSpan_Click);
+			// 
 			// BntAddSpan
 			// 
 			this.BntAddSpan.ControlSize = Microsoft.Office.Core.RibbonControlSize.RibbonControlSizeLarge;
@@ -197,14 +206,6 @@ namespace exercNetLex
 			// dlgImg
 			// 
 			this.dlgImg.FileName = "dlgImg";
-			// 
-			// BtnFindSpan
-			// 
-			this.BtnFindSpan.ControlSize = Microsoft.Office.Core.RibbonControlSize.RibbonControlSizeLarge;
-			this.BtnFindSpan.Label = "Find Span";
-			this.BtnFindSpan.Name = "BtnFindSpan";
-			this.BtnFindSpan.ShowImage = true;
-			this.BtnFindSpan.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.BtnFindSpan_Click);
 			// 
 			// Ribbon1
 			// 
