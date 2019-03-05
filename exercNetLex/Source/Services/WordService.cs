@@ -1,6 +1,8 @@
 ﻿using Word = Microsoft.Office.Interop.Word;
 using System;
 using System.IO;
+using System.Windows.Forms;
+using System.Collections.Generic;
 
 namespace exercNetLex.Source.Services
 {
@@ -341,6 +343,117 @@ namespace exercNetLex.Source.Services
 				}
 			}
 			return true;
+		}
+
+		public void FindSpan()
+		{
+			Word.Document Documento = Globals.ThisAddIn.Application.ActiveDocument;
+			Word.Selection Sel = Globals.ThisAddIn.Application.ActiveDocument.Application.Selection;
+
+			Stack<object> ConjAbre = new Stack<object>();
+			Stack<Word.Range> PosColcheteAbre = new Stack<Word.Range>();
+			Stack<Word.Range> PosColcheteFecha = new Stack<Word.Range>();
+
+			int Count = 0, Start = Sel.Start, End = Sel.End;
+
+			object AbreColchete = "[";
+			object FechaColchete = "]";
+			Sel.Find.ClearFormatting();
+			Sel.Find.Forward = true;
+			Sel.Find.MatchWildcards = true;
+			Sel.Find.Text = @"[\[\]]";
+			Sel.Find.Execute();
+
+			if (!Sel.Find.Found)
+			{
+				Documento.Range(0, 0).Select();
+				Sel.Find.Execute();
+
+				if (!Sel.Find.Found)
+				{
+					MessageBox.Show("Colchetes não encontrados!");
+				}
+				else
+				{
+					while (Sel.Find.Found)
+					{
+						if (Sel.Text == "[")
+						{
+							ConjAbre.Push(AbreColchete);
+							PosColcheteAbre.Push(Sel.Range);
+							Count++;
+						}
+						if (Sel.Text == "]")
+						{
+							if (ConjAbre.Count > 0)
+							{
+								ConjAbre.Pop();
+								PosColcheteAbre.Pop();
+							}
+							else
+							{
+								PosColcheteFecha.Push(Sel.Range);
+							}
+							Count--;
+						}
+						Sel.Find.Execute();
+					}
+				}
+			}
+			else
+			{
+				Documento.Range(0, 0).Select();
+				Sel.Find.Execute();
+
+				while (Sel.Find.Found)
+				{
+					if (Sel.Text == "[")
+					{
+						ConjAbre.Push(AbreColchete);
+						PosColcheteAbre.Push(Sel.Range);
+						Count++;
+					}
+					if (Sel.Text == "]")
+					{
+						if (ConjAbre.Count > 0)
+						{
+							ConjAbre.Pop();
+							PosColcheteAbre.Pop();
+
+						}
+						else
+						{
+							PosColcheteFecha.Push(Sel.Range);
+						}
+						Count--;
+					}
+					Sel.Find.Execute();
+				}
+			}
+
+			if (ConjAbre.Count > 0)
+			{
+				foreach (Word.Range pos in PosColcheteAbre)
+				{
+					//MessageBox.Show("Abre: " + pos.Start.ToString() + " - " + pos.End.ToString());
+					Sel.SetRange(pos.Start, pos.End);
+					Sel.Select();
+				}
+			}
+			else if (Count < 0)
+			{
+				Word.Range Aux = PosColcheteFecha.Pop();
+				Sel.SetRange(Aux.Start, Aux.End);
+				Sel.Select();
+				//MessageBox.Show("Fecha: " + Aux.Start.ToString() + " - " + Aux.End.ToString());
+			}
+			else
+			{
+				Sel.SetRange(Start, End);
+				Sel.Select();
+				Sel.Collapse();
+			}
+
 		}
 	}
 }

@@ -13,6 +13,7 @@ namespace exercNetLex.Source.Views
 		public event EventHandler AddImage;
 		public event EventHandler SavePDF;
 		public event EventHandler InvertCase;
+		public event EventHandler FindSpan;
 
 		private string NomeArquivo;
 		public OpenFileDialog Open { get; set; }
@@ -52,5 +53,9 @@ namespace exercNetLex.Source.Views
 			return NomeArquivo;
 		}
 
+		public void ClickButton_FindSpan(object sender, EventArgs e)
+		{
+			FindSpan(sender, e);
+		}
 	}
 }

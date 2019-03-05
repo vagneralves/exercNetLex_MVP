@@ -21,6 +21,12 @@ namespace exercNetLex.Presenters
 			View.AddImage += View_AddImage;
 			View.SavePDF += View_SavePDF;
 			View.InvertCase += View_InvertCase;
+			View.FindSpan += View_FindSpan;
+		}
+
+		private void View_FindSpan(object sender, EventArgs e)
+		{
+			wordService.FindSpan();
 		}
 
 		private void View_InvertCase(object sender, EventArgs e)

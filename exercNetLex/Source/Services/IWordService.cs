@@ -6,6 +6,7 @@
 		void AddImage(string nomeImg);
 		void SavePDF();
 		void InvertCase();
+		void FindSpan();
 		void AddField(string expression);
 		void AddSpan(string expression);
 		void AddQualificacao(string nomeContatoPJ, string nomeContatoRep);

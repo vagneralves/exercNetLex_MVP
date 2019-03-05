@@ -94,5 +94,11 @@ namespace exercNetLex
 			QualificationView = new QualificationView();
 			QualificationView.Show();
 		}
+
+		private void BtnFindSpan_Click(object sender, RibbonControlEventArgs e)
+		{
+			Rv = new RibbonView();
+			Rv.ClickButton_FindSpan(sender, (EventArgs)e);
+		}
 	}
 }
